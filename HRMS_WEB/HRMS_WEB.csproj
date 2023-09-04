@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>1ea7995a-ccb3-4bdf-9926-350fae3d9e70</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -52,12 +53,6 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.3" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DbOperations" />
-    <Folder Include="Entities" />
-    <Folder Include="Enums" />
   </ItemGroup>
 
   <ItemGroup>
