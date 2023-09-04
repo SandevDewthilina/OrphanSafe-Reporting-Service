@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.2.6.0" Ref="0" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="MonthDraughtmentWorkHourReport" DisplayName="UsersReport" Margins="100, 100, 0, 82" PaperKind="A4" PageWidth="827" PageHeight="1169" Version="20.2" Font="Microsoft Sans Serif, 9.75pt">
+  <Extensions>
+    <Item1 Ref="1" Key="DataSerializationExtension" Value="DevExpress.XtraReports.Web.ReportDesigner.DefaultDataSerializer" />
+  </Extensions>
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="0" />
+    <Item2 Ref="3" ControlType="PageHeaderBand" Name="PageHeader" HeightF="189.72221">
+      <Controls>
+        <Item1 Ref="4" ControlType="XRLabel" Name="label1" AutoWidth="true" CanGrow="false" Text="Duty ON/OFF Logs" TextAlignment="MiddleCenter" WordWrap="false" SizeF="302.1282,39.32291" LocationFloat="164.53847,37.34375" Font="Microsoft Sans Serif, 24pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="5" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="6" ControlType="XRPictureBox" Name="pictureBox1" ImageUrl="https://media-exp1.licdn.com/dms/image/C4D0BAQEl5ICtqXdeyA/company-logo_200_200/0/1519925139014?e=2159024400&amp;v=beta&amp;t=23_y-49GXu_zB9GuLBjLi6o1Y6KjIi4QeF7qeYinvuU" Sizing="Squeeze" ImageAlignment="MiddleCenter" SizeF="114.77453,100" LocationFloat="17.778473,10" />
+        <Item3 Ref="7" ControlType="XRTable" Name="table2" TextAlignment="MiddleCenter" SizeF="626.99994,65.55554" LocationFloat="0,124.166664" Font="Microsoft Sans Serif, 12pt, style=Bold, Italic" BackColor="Gainsboro" Padding="2,2,0,0,96" Borders="All">
+          <Rows>
+            <Item1 Ref="8" ControlType="XRTableRow" Name="tableRow2" Weight="1" Borders="All">
+              <Cells>
+                <Item1 Ref="9" ControlType="XRTableCell" Name="tableCell3" Weight="2.0333331298828123" Multiline="true" Text="Username" />
+                <Item2 Ref="10" ControlType="XRTableCell" Name="tableCell4" Weight="2.6333334350585935" Multiline="true" Text="Time" />
+                <Item3 Ref="11" ControlType="XRTableCell" Name="tableCell5" Weight="1.603332824707031" Multiline="true" Text="Duty ON/OFF" />
+              </Cells>
+              <StylePriority Ref="12" UseBorders="false" />
+            </Item1>
+          </Rows>
+          <StylePriority Ref="13" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item2>
+    <Item3 Ref="14" ControlType="DetailBand" Name="Detail" HeightF="25">
+      <Controls>
+        <Item1 Ref="15" ControlType="XRTable" Name="table1" TextAlignment="MiddleLeft" SizeF="627,25" LocationFloat="0,0" Padding="2,2,0,0,96" Borders="Left, Right, Bottom">
+          <Rows>
+            <Item1 Ref="16" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="17" ControlType="XRTableCell" Name="tableCell1" Weight="2.1376065523498764" Multiline="true" Text="[Username]">
+                  <ExpressionBindings>
+                    <Item1 Ref="18" EventName="BeforePrint" PropertyName="Text" Expression="[Username]" />
+                  </ExpressionBindings>
+                </Item1>
+                <Item2 Ref="19" ControlType="XRTableCell" Name="tableCell2" Weight="2.768375856139898" TextFormatString="{0:dddd, MMMM d, yyyy hh:mm tt}" Multiline="true" Text="[Time]">
+                  <ExpressionBindings>
+                    <Item1 Ref="20" EventName="BeforePrint" PropertyName="Text" Expression="[Time]" />
+                  </ExpressionBindings>
+                </Item2>
+                <Item3 Ref="21" ControlType="XRTableCell" Name="tableCell6" Weight="1.6855558567971851" Multiline="true" TextAlignment="MiddleCenter">
+                  <ExpressionBindings>
+                    <Item1 Ref="22" EventName="BeforePrint" PropertyName="Text" Expression="Iif([IsOn] == 1, 'ON', 'OFF')" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="23" UseTextAlignment="false" />
+                </Item3>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="24" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item3>
+    <Item4 Ref="25" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="82">
+      <Controls>
+        <Item1 Ref="26" ControlType="XRLabel" Name="label3" AutoWidth="true" Text="All Rights reserved" WordWrap="false" SizeF="132.55298,17.211914" LocationFloat="2.5431314E-05,32.99998" Font="Microsoft Sans Serif, 8pt, style=Italic" Padding="2,2,0,0,100">
+          <StylePriority Ref="27" UseFont="false" />
+        </Item1>
+        <Item2 Ref="28" ControlType="XRLabel" Name="label2" AutoWidth="true" Text="Haritha Consultations(Pvt)Ltd" WordWrap="false" SizeF="181.08128,16.048174" LocationFloat="203.33333,32.99998" Font="Microsoft Sans Serif, 9pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="29" UseFont="false" />
+        </Item2>
+        <Item3 Ref="30" ControlType="XRPageInfo" Name="pageInfo1" TextAlignment="MiddleCenter" SizeF="100,23" LocationFloat="526.99994,27.211914" Font="Microsoft Sans Serif, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="31" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item4>
+  </Bands>
+</XtraReportsLayoutSerializer>

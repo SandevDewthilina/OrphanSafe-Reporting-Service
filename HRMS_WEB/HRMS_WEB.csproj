@@ -1,0 +1,116 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>1ea7995a-ccb3-4bdf-9926-350fae3d9e70</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201111061827_forieg.cs" />
+    <Compile Remove="Migrations\20201111061827_forieg.Designer.cs" />
+    <Compile Remove="Migrations\20201111062414_re.cs" />
+    <Compile Remove="Migrations\20201111062414_re.Designer.cs" />
+    <Compile Remove="Migrations\20201111062505_fsdfsdf.cs" />
+    <Compile Remove="Migrations\20201111062505_fsdfsdf.Designer.cs" />
+    <Compile Remove="Migrations\20201112071326_isactive.cs" />
+    <Compile Remove="Migrations\20201112071326_isactive.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Reports\Hello World Report.ecodex" />
+    <None Remove="Reports\HelloWorldReport.vsrepx" />
+    <None Remove="Reports\Month End User Report.ecodex" />
+    <None Remove="Reports\MonthDraughtmentWorkHourReport.ecodex" />
+    <None Remove="Reports\MonthDraughtmentWorkHourReport.vsrepx" />
+    <None Remove="Reports\Samplereport.vsrepx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="20.2.6" />
+    <PackageReference Include="DevExpress.CrossPlatform.Printing.DrawingEngine" Version="1.0.10" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DbOperations" />
+    <Folder Include="Entities" />
+    <Folder Include="Enums" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Reports\HelloWorldReport.cs">
+      <DependentUpon>HelloWorldReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\HelloWorldReport.Designer.cs">
+      <DependentUpon>HelloWorldReport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Samplereport.cs">
+      <DependentUpon>Samplereport.vsrepx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Samplereport.Designer.cs">
+      <DependentUpon>Samplereport.vsrepx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Duty\ActiveMembers.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Duty\ActivityChart.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Duty\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\File\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\HumidityData.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\MonthDraughtmenSummary.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Project\CreateUpcomingProject.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Project\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Project\OpenProjects.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Project\ProjectCriteria.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Project\UpcomingProjectEdit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Screenshot\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SecondaryProject\CreateProject.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SecondaryProject\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_defaultModal.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_LockAccountLayout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_LoginLayout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ReportDesignLayout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SubLevel\CreateSublevelForProject.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SubLevel\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SubLevel\GetSublevelsForProject.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SubLevel\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\SystemConfigurations\GetSystemConfigurations.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\CreateSpecialtask.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\Draughtmen.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\Engineers.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\Leaves.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\User\SpecialTasks.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\audio\whatsapp_incoming.mp3" />
+  </ItemGroup>
+
+</Project>

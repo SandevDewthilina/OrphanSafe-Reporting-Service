@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Generate Report";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">@ViewData["Title"]</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v2</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-info">
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <div class="col-sm-7" id="htmlcontent">
+
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="btn btn-primary btn-block" id="submitbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+
+<!-- Select2 -->
+<script src="~/plugins/select2/js/select2.full.min.js"></script>
+<!-- Select2 -->
+<!-- Select2 -->
+<link rel="stylesheet" href="~/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="~/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+<!-- Page specific script -->
+<script>
+    $('.select2').select2({
+        theme: 'bootstrap4'
+    });
+
+</script>
+<script>
+    $(function () {
+
+
+        const htmlcontent = @Html.Raw(Json.Serialize(ViewBag.formItems));
+        const hasparams = @Html.Raw(Json.Serialize(ViewBag.hasparams));
+        const filename = @Html.Raw(Json.Serialize(ViewBag.filename));
+        const reportname = @Html.Raw(Json.Serialize(ViewBag.reportname));
+        const dropDownJson = $.parseJSON(@Html.Raw(Json.Serialize(ViewBag.dropdownRows)));
+        const IsDynamic = @Html.Raw(Json.Serialize(ViewBag.IsDynamic));
+
+        htmlcontent.forEach(item => {
+            $('#htmlcontent').append(
+                "<div class=\"form-group\">" +
+                "<label class=\"control-label\">" + item.split(":")[2] + "</label>" +
+                "<input class=\"form-control\" asp-for=\"" + item.split(":")[0] + "\" type=\"" + item.split(":")[1]  +"\" id=\"" + item.split(":")[0] +"\"/>" +
+                "</div>"
+            );
+        });
+        debugger;
+        dropDownJson.forEach(dropdown => {
+            var options = "";
+            dropdown.data.forEach(optionitem => {
+                options += "<option value=\"" + optionitem.cells[0]["value"]  + "\">" + optionitem.cells[1]["value"] + "</option>"
+            })
+            $('#htmlcontent').append(
+                "<div class=\"form-group\">" +
+                "<label class=\"control-label\">" + dropdown.lablename + "</label>" +
+                "<select class=\"form-control select2\" id=\"" + dropdown.bindingname + "\">" + options + "</select>" +
+                "</div>"
+            );
+
+        })
+
+
+
+        $('.select2').select2({
+            theme: 'bootstrap4'
+        });
+
+        $('#submitbtn').click(function () {
+            var parameters = [];
+            if (parameters != null) {
+                htmlcontent.forEach(item => {
+                    parameters.push($("#" + item.split(":")[0]).val().toString() + "*" + item.split(":")[1] + "*" + item.split(":")[0]);
+                })
+            }
+            dropDownJson.forEach(dropdown => {
+                    // get the select item
+                $.each($("#" + dropdown.bindingname + " option:selected"), function () {
+                    parameters.push($(this).val() + "*entity*" + dropdown.bindingname);
+                 });
+            })
+
+            var par = parameters;
+            debugger;
+            window.location.href = '/Reporter/ReturnReport?args=' + parameters.toString() + "&hasparams=" + hasparams + "&sql=" + "" + "&filename=" + filename + "&reportname=" + reportname + "&IsDynamic=" + IsDynamic;
+        })
+
+    })
+</script>

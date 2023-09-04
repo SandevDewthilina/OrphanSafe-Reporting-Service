@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "OrphanSafe Reporting Service";
+}
+<style>
+
+    /* [2] Transition property for smooth transformation of images */
+    .img-hover-zoom {
+        transition: .5s ease;
+        cursor: pointer;
+    }
+
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-zoom:hover {
+            transform: scale(1.1);
+            elevation: above;
+            margin-left: 80px;
+        }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">@ViewData["Title"]</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v2</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-6">
+                    @foreach (string name in ViewBag.reportnamelist)
+                    {
+
+                        <div class="callout callout-danger img-hover-zoom" data-toggle="modal" data-target="#modal-default" data-id="@name">
+                            <h5>@name</h5>
+                        </div>
+
+                    }
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+
+
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Open With</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>You can Design or View Your Reports</p>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-sm-10 text-right">
+                        <button type="button" class="btn btn-success designer">Designer</button>
+                        <button type="button" class="btn btn-danger viewer">Viewer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script>
+    $(function () {
+        var name = ""
+
+
+        $('.callout').click(function () {
+            name = $(this).data("id");
+        })
+
+        $('.viewer').click(function () {
+            window.open("/Reporter/GenerateReport?xmlname=" + name  + '.ecodex', '_blank');
+        })
+        $('.designer').click(function () {
+            window.open("/Reporter/ReportDesigner?xmlname=" + name + '.ecodex', '_blank');
+        })
+    })
+</script>
