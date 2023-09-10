@@ -59,10 +59,13 @@ namespace HRMS_WEB.Services
             string sourceFilePath = Path.Combine(destinationDirectory, "DefaultTemplate.ecodex");
             try
             {
-                string fileContent = File.ReadAllText(sourceFilePath);
-                fileContent = fileContent.Replace("#report-name", defaultUrl);
-                fileContent = fileContent.Replace("DefaultTemplate", defaultUrl);
-                File.WriteAllText(destinationFilePath, fileContent);
+                if (!File.Exists((destinationFilePath)))
+                {
+                    string fileContent = File.ReadAllText(sourceFilePath);
+                    fileContent = fileContent.Replace("#report-name", defaultUrl);
+                    fileContent = fileContent.Replace("DefaultTemplate", defaultUrl);
+                    File.WriteAllText(destinationFilePath, fileContent);
+                }
                 report.SaveLayoutToXml(Path.Combine(ReportDirectory, defaultUrl + FileExtension));
             }
             catch (IOException e)

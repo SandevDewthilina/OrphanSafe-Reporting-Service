@@ -4,20 +4,12 @@
   <!--add parameters with the @ prefix-->
   <Query hasParams="true">
   <![CDATA[
-    select u.Name as Username, dl.IsDutyOn  as isOn, dl.LogDateTime as Time, CURRENT_TIME() as PrintDate  from
-    DutyLogs as dl
-    inner join AspNetUsers as u
-    on dl.UserId = u.Id
-    where dl.LogDate > '@first' and dl.LogDate < '@second' and u.Id = '@third'
-    order by dl.UserId]]>
+    select "Username" as username, "Email" as Email, "PhoneNumber" as Phone, "EmailConfirmed" as EmailConfirmed from "User"]]>
 	
   </Query>
 
   <!--binding name must be unique-->
   <!--type is date or datetime-->
-  <EParameter type="date" bindingName="first">Start Date</EParameter>
-  <EParameter type="date" bindingName="second">End Date</EParameter>
-  <EParameter type="Entity" bindingName="third" query="select ID, Name from AspNetUsers;">Select User</EParameter>
 
 
 </ReportRoot>

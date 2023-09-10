@@ -15,6 +15,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Npgsql;
 
 namespace HRMS_WEB.Controllers
 {
@@ -124,35 +125,33 @@ namespace HRMS_WEB.Controllers
 
         public DataSet getDataset(String sql, string sreportname = "Dynamic report")
         {
-            using (var conn = new MySqlConnection(configuration.GetConnectionString("DefaultConnection")))
+            using var conn = new NpgsqlConnection(configuration.GetConnectionString("DefaultPostgreSQLConnection"));
+            try
             {
-                try
-                {
-                    // open the database connection
-                    conn.Open();
+                // open the database connection
+                conn.Open();
 
-                    // mysql command
-                    var command = new MySqlCommand(sql, conn);
+                // mysql command
+                var command = new NpgsqlCommand(sql, conn);
 
-                    // database reader
-                    var reader = command.ExecuteReader();
+                // database reader
+                var reader = command.ExecuteReader();
 
-                    // load data and store
-                    var dataTable = new DataTable();
-                    dataTable.Load(reader);
+                // load data and store
+                var dataTable = new DataTable();
+                dataTable.Load(reader);
 
-                    DataSet dataSet1 = new DataSet();
-                    dataSet1.DataSetName = sreportname;
+                DataSet dataSet1 = new DataSet();
+                dataSet1.DataSetName = sreportname;
 
-                    dataSet1.Tables.Add(dataTable);
+                dataSet1.Tables.Add(dataTable);
 
-                    return dataSet1;
+                return dataSet1;
 
-                }
-                catch (Exception ex)
-                {
-                    return new DataSet();
-                }
+            }
+            catch (Exception ex)
+            {
+                return new DataSet();
             }
         }
 
