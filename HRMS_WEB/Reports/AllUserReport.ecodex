@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportRoot ReportName="AllUserReport" FileName="AllUserReport">
+
+  <!--add parameters with the @ prefix-->
+  <Query hasParams="false">
+  <![CDATA[
+   select u."Email", u."Username", r."Name" as Role from "User" as u 
+inner join "UserRole" as ur on ur."UserId" = u."Id"
+inner join "Role" as r on r."Id" = ur."RoleId"]]>
+	
+  </Query>
+
+  <!--binding name must be unique-->
+  <!--type is date or datetime-->
+  <!--<EParameter type="date" bindingName="first">Start Date</EParameter>
+  <EParameter type="date" bindingName="second">End Date</EParameter>
+  <EParameter type="Entity" bindingName="third" query="select ID, Name from AspNetUsers;">Select User</EParameter>-->
+
+
+</ReportRoot>

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Reports\AllUserReport.vsrepx" />
     <None Remove="Reports\Hello World Report.ecodex" />
     <None Remove="Reports\HelloWorldReport.vsrepx" />
     <None Remove="Reports\Month End User Report.ecodex" />
@@ -57,6 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Reports\AllUserReport.cs">
+      <DependentUpon>AllUserReport.vsrepx</DependentUpon>
+    </Compile>
     <Compile Update="Reports\HelloWorldReport.cs">
       <DependentUpon>HelloWorldReport.vsrepx</DependentUpon>
     </Compile>
@@ -107,6 +111,10 @@
     <_ContentIncludedByDefault Remove="Views\User\Leaves.cshtml" />
     <_ContentIncludedByDefault Remove="Views\User\SpecialTasks.cshtml" />
     <_ContentIncludedByDefault Remove="wwwroot\audio\whatsapp_incoming.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\AllUserReport.vsrepx" />
   </ItemGroup>
 
 </Project>

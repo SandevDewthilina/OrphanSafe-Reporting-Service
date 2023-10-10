@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.2.6.0" Ref="0" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="MonthDraughtmentWorkHourReport" DisplayName="AllUserReport" Margins="100, 100, 0, 82" PaperKind="A4" PageWidth="827" PageHeight="1169" Version="20.2" Font="Microsoft Sans Serif, 9.75pt">
+  <Extensions>
+    <Item1 Ref="1" Key="DataSerializationExtension" Value="DevExpress.XtraReports.Web.ReportDesigner.DefaultDataSerializer" />
+    <Item2 Ref="2" Key="VSReportExtInfo" Value=".vsrepx" />
+  </Extensions>
+  <Bands>
+    <Item1 Ref="3" ControlType="TopMarginBand" Name="TopMargin" HeightF="0" />
+    <Item2 Ref="4" ControlType="PageHeaderBand" Name="PageHeader" HeightF="189.722214">
+      <Controls>
+        <Item1 Ref="5" ControlType="XRLabel" Name="label4" Multiline="true" Text="OrphanSafe Reports" TextAlignment="TopCenter" SizeF="302.128174,20.3958321" LocationFloat="164.538437,49.3229027" Font="Microsoft Sans Serif, 8pt" Padding="2,2,0,0,96">
+          <StylePriority Ref="6" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="7" ControlType="XRLine" Name="line1" SizeF="626.9999,2" LocationFloat="0.000104717175,97.7451" />
+        <Item3 Ref="8" ControlType="XRLabel" Name="label1" AutoWidth="true" CanGrow="false" Text="All User Report" TextAlignment="MiddleCenter" WordWrap="false" SizeF="302.1282,39.32291" LocationFloat="164.538437,9.999998" Font="Microsoft Sans Serif, 12pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="9" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="10" ControlType="XRPictureBox" Name="pictureBox1" ImageUrl="http://localhost:3000/app-icon.png" Sizing="Squeeze" ImageAlignment="MiddleCenter" SizeF="101.232872,76.5625" LocationFloat="42.2576561,9.999998" />
+        <Item5 Ref="11" ControlType="XRTable" Name="table2" TextAlignment="MiddleCenter" SizeF="626.999939,32.2222" LocationFloat="0,157.5" Font="Microsoft Sans Serif, 12pt, style=Bold, Italic" BackColor="Gainsboro" Padding="2,2,0,0,96" Borders="All">
+          <Rows>
+            <Item1 Ref="12" ControlType="XRTableRow" Name="tableRow2" Weight="1" Borders="All">
+              <Cells>
+                <Item1 Ref="13" ControlType="XRTableCell" Name="tableCell3" Weight="2.0333331298828123" Multiline="true" Text="Email" />
+                <Item2 Ref="14" ControlType="XRTableCell" Name="tableCell4" Weight="2.6333334350585935" Multiline="true" Text="Username" />
+                <Item3 Ref="15" ControlType="XRTableCell" Name="tableCell5" Weight="1.6033328247070311" Multiline="true" Text="Role" />
+              </Cells>
+              <StylePriority Ref="16" UseBorders="false" />
+            </Item1>
+          </Rows>
+          <StylePriority Ref="17" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+      </Controls>
+    </Item2>
+    <Item3 Ref="18" ControlType="DetailBand" Name="Detail" HeightF="25">
+      <Controls>
+        <Item1 Ref="19" ControlType="XRTable" Name="table1" TextAlignment="MiddleLeft" SizeF="627,25" LocationFloat="0,0" Padding="2,2,0,0,96" Borders="Left, Right, Bottom">
+          <Rows>
+            <Item1 Ref="20" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="21" ControlType="XRTableCell" Name="tableCell1" Weight="2.1376065523498764" Multiline="true" Text="[Username]">
+                  <ExpressionBindings>
+                    <Item1 Ref="22" EventName="BeforePrint" PropertyName="Text" Expression="[Email]" />
+                  </ExpressionBindings>
+                </Item1>
+                <Item2 Ref="23" ControlType="XRTableCell" Name="tableCell2" Weight="2.7683758561398979" TextFormatString="{0:dddd, MMMM d, yyyy hh:mm tt}" Multiline="true" Text="[Time]">
+                  <ExpressionBindings>
+                    <Item1 Ref="24" EventName="BeforePrint" PropertyName="Text" Expression="[Username]" />
+                  </ExpressionBindings>
+                </Item2>
+                <Item3 Ref="25" ControlType="XRTableCell" Name="tableCell6" Weight="1.6855558567971851" Multiline="true" TextAlignment="MiddleLeft">
+                  <ExpressionBindings>
+                    <Item1 Ref="26" EventName="BeforePrint" PropertyName="Text" Expression="[Role]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="27" UseTextAlignment="false" />
+                </Item3>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="28" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item3>
+    <Item4 Ref="29" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="82">
+      <Controls>
+        <Item1 Ref="30" ControlType="XRLabel" Name="label3" AutoWidth="true" Text="All Rights reserved" WordWrap="false" SizeF="132.552979,17.2119141" LocationFloat="2.54313145E-05,32.99998" Font="Microsoft Sans Serif, 8pt, style=Italic" Padding="2,2,0,0,100">
+          <StylePriority Ref="31" UseFont="false" />
+        </Item1>
+        <Item2 Ref="32" ControlType="XRLabel" Name="label2" AutoWidth="true" Text="OrphanSafe Management" TextAlignment="TopCenter" WordWrap="false" SizeF="181.081284,16.0481739" LocationFloat="200,37.5" Font="Microsoft Sans Serif, 9pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="33" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="34" ControlType="XRPageInfo" Name="pageInfo1" TextAlignment="MiddleCenter" SizeF="100,23" LocationFloat="526.999939,27.2119141" Font="Microsoft Sans Serif, 9.75pt, style=Bold" Padding="2,2,0,0,100">
+          <StylePriority Ref="35" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item4>
+  </Bands>
+</XtraReportsLayoutSerializer>
